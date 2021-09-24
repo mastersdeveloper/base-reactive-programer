@@ -1,5 +1,7 @@
 package pe.edu.galaxy.training.java.api.demo.webflux.service;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.galaxy.training.java.api.demo.webflux.model.Taller;
@@ -31,5 +33,23 @@ public class TallerServiceImpl implements TallerService {
 	@Override
 	public Mono<Taller> save(Taller taller) {
 		return tallerRepository.save(taller);
+	}
+
+	@Override
+	public Mono<Taller> update(Integer idTaller, Taller taller) {
+		return tallerRepository.save(taller);
+	}
+
+	@Override
+	public Mono delete(Integer idTaller) {
+
+		Mono<Taller> vTaller = findByIdTaller(idTaller);
+
+		if (Objects.isNull(vTaller)) {
+			return Mono.empty();
+		}
+
+		return vTaller.flatMap(
+				tallerBeDeleted -> tallerRepository.delete(tallerBeDeleted).then(Mono.just(tallerBeDeleted)));
 	}
 }

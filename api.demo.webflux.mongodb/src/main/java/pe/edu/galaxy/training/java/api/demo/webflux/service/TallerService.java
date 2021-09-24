@@ -6,18 +6,20 @@ import reactor.core.publisher.Mono;
 
 public interface TallerService {
 
-	//List<Taller> getAll(); // Clasica - JCF
-	
-	Flux<Taller> getAll();   // Reactivo
-	
-	// Taller finById(Integer id);				// Clasica - 
-	// Optional<Taller> finById(Integer id); 	// Clasica - Otimizado
-	
+	// List<Taller> getAll(); // Clasica - JCF
+
+	Flux<Taller> getAll(); // Reactivo
+
+	// Taller finById(Integer id); // Clasica -
+	// Optional<Taller> finById(Integer id); // Clasica - Otimizado
+
 	Mono<Taller> findById(String id); // Reactivo
-	
-	Mono<Taller>  findByIdTaller(Integer idTaller);
-	
-	 Mono<Taller> save(Taller taller);
-	
-	
+
+	Mono<Taller> findByIdTaller(Integer idTaller);
+
+	Mono<Taller> save(Taller taller);
+
+	Mono<Taller> update(Integer idTaller, Taller taller);
+
+	Mono delete(Integer idTaller);
 }

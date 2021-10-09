@@ -7,34 +7,33 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.web.reactive.function.BodyInserters.fromPublisher;
 import pe.edu.galaxy.training.java.api.reactive.webflux.document.Taller;
-import pe.edu.galaxy.training.java.api.reactive.webflux.document.Instructor;
 import pe.edu.galaxy.training.java.api.reactive.webflux.service.TallerService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Component
 public class TallerHandler {
 
 	@Autowired
 	private TallerService tallerService;
-
+	
 	@Autowired
 	private JsonMapper jsonMapper;
 
 	public Mono<ServerResponse> findAll(ServerRequest request) {
 
 		Flux<Taller> talleres = tallerService.findAll();
-		System.out.println("findAll...");
-		System.out.println(talleres);
 		return ok().contentType(MediaType.APPLICATION_JSON).body(talleres, Taller.class);
 	}
 
 	public Mono<ServerResponse> findByLikeNombre(ServerRequest request) {
-		System.out.println("findByLikeNombre...");
 		Flux<Taller> talleres = tallerService.findByNombreLike(request.queryParam("nombre").get());
 		System.out.println(talleres);
 		return ok().body(talleres, Taller.class);
@@ -57,22 +56,13 @@ public class TallerHandler {
 	public Mono<ServerResponse> update(ServerRequest request) {
 
 		String id = request.pathVariable("id");
+//		log.info("Handler id "+id);
 		Mono<Taller> tallerMono = request.bodyToMono(Taller.class);
 
 		return tallerService.findById(id).flatMap(taller1 -> tallerMono.flatMap(taller2 -> {
-
-			// jsonMapper.writ
-
-			taller1.setId(taller2.getId());
-			taller1.setNombre(taller2.getNombre());
-
-			// Instructor instructor = Instructor.builder()
-			// .codigo(taller2.getInstructor().getCodigo())
-			// .build();
-
-			taller1.setEstado(taller2.getEstado());
-
-			Mono<Taller> updatedTaller = tallerService.save(taller1);
+			taller2.setId(id);
+//			log.info("Handler "+taller1.toString());
+			Mono<Taller> updatedTaller = tallerService.save(this.getTaller(taller2));
 
 			return ok().body(updatedTaller, Taller.class);
 		}));
@@ -86,10 +76,11 @@ public class TallerHandler {
 			Mono<Taller> updatedTaller = tallerService.save(taller);
 			return ok().body(updatedTaller, Taller.class);
 		});
-
 	}
 
+
 	// Mapper
+	
 	private Taller getTaller(Taller taller) {
 		return jsonMapper.convertValue(taller, Taller.class);
 	}

@@ -12,9 +12,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 /**
- * The EmployeeRepository is a simple interface which extend JpaRepository to
- * provide all default methods to your entity/document repository.
+ * The EmployeeRepository is a simple interface which extend JpaRepository to provide all default methods to your
+ * entity/document repository.
  *
  * @author Aristedes Novoa
  * @version 1.0
@@ -29,26 +30,30 @@ import lombok.NoArgsConstructor;
 public class Taller implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@Builder.Default
-	private String id = UUID.randomUUID().toString();
-
+    private String id = UUID.randomUUID().toString();
+	
 	@Field(name = "codigo")
 	private Long codigo;
 
 	@Field(name = "nombre")
 	private String nombre;
+	
+	@Field(name = "duracion")
+	private Double duracion;
+	
+	@Field(name = "instructor")	
+	private Instructor instructor;
+	
+	@Field(name = "temas")	
+	private List<Tema> temas;
+	
+	@Field(name = "situcion")	
+	private Situacion situacion;
 
 	@Field(name = "estado")
 	private String estado;
 
-	@Field(name = "instructor")
-	private Instructor instructor;
-	
-	@Field(name = "temas")
-	private List<Tema> temas;
-	
-	@Field(name = "situacion")
-	private Situacion situacion;
 }

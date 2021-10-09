@@ -8,7 +8,7 @@ public interface TallerService {
 	
 	Flux<Taller> findAll();
 
-	Flux<Taller> findByNombreLike(String tallerNombre);
+	Flux<Taller> findByNombreLike(String nombre);
 	
 	Mono<Taller> findById(String id);
 

@@ -2,11 +2,14 @@ package pe.edu.galaxy.training.java.api.reactive.webflux.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
 import pe.edu.galaxy.training.java.api.reactive.webflux.document.Taller;
 import pe.edu.galaxy.training.java.api.reactive.webflux.repostitory.TallerRespository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Service
 public class TallerServiceImpl implements TallerService {
 
@@ -35,6 +38,7 @@ public class TallerServiceImpl implements TallerService {
 
 	@Override
 	public Mono<Taller> save(Taller taller) {
+		log.info(taller.toString());
 		return tallerRespository.save(taller);
 	}
 

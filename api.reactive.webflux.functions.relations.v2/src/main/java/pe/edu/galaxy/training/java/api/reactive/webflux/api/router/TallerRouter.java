@@ -20,18 +20,17 @@ public class TallerRouter {
 		return RouterFunctions
 				.route(GET(API_ROUTE_TALLERES).and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
 						tallerHandler::findAll)
-				.andRoute(GET(API_ROUTE_TALLERES + "/by-nombre")
-						.and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), tallerHandler::findByLikeNombre)
-				.andRoute(GET(API_ROUTE_TALLERES + "/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+				.andRoute(GET(API_ROUTE_TALLERES+"/by-nombre").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+						tallerHandler::findByLikeNombre)
+				.andRoute(GET(API_ROUTE_TALLERES+"/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
 						tallerHandler::findById)
-				.andRoute(GET(API_ROUTE_TALLERES + "/codigo/{codigo}")
+				.andRoute(GET(API_ROUTE_TALLERES+"/codigo/{codigo}")
 						.and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), tallerHandler::findByCodigo)
 				.andRoute(POST(API_ROUTE_TALLERES).and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
 						tallerHandler::add)
-				.andRoute(PUT(API_ROUTE_TALLERES + "/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+				.andRoute(PUT(API_ROUTE_TALLERES+"/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
 						tallerHandler::update)
-				.andRoute(
-						DELETE(API_ROUTE_TALLERES + "/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+				.andRoute(DELETE(API_ROUTE_TALLERES+"/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
 						tallerHandler::delete);
 	}
 }

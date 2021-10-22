@@ -6,7 +6,13 @@ import reactor.core.publisher.Mono;
 
 public interface TallerService {
 
-	Flux<Taller> getAll();
+	//List<Taller> getAll(); // Clasica - JCF
 	
-	Mono<Taller> findById(Integer id);
+	Flux<Taller> getAll();   // Reactivo
+	
+	// Taller finById(Integer id);				// Clasica - 
+	// Optional<Taller> finById(Integer id); 	// Clasica - Otimizado
+	
+	Mono<Taller> findById(Integer id); // Reactivo
+	
 }

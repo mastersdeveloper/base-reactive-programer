@@ -3,3 +3,10 @@ spring data
 
 DBRef Mongo DB 
 
+JPA => Api de persistencia de java, conjunto de interface de como se va a implementar la persistencia
+
+h2: http://localhost:8080/h2-console/login.jsp?jsessionid=33fc8ab6f0cf2c96cb11fb42f4ac1e6e
+
+root
+admin
+Admin092@

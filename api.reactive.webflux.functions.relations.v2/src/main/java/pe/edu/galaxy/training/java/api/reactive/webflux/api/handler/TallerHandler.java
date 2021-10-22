@@ -8,12 +8,12 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
 import lombok.extern.slf4j.Slf4j;
+import pe.edu.galaxy.training.java.api.reactive.webflux.document.Taller;
+import pe.edu.galaxy.training.java.api.reactive.webflux.service.TallerService;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.web.reactive.function.BodyInserters.fromPublisher;
-import pe.edu.galaxy.training.java.api.reactive.webflux.document.Taller;
-import pe.edu.galaxy.training.java.api.reactive.webflux.service.TallerService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

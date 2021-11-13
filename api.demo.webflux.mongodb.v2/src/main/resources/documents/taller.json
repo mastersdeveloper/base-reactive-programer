@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "61462d631430862c54ed1722"
+  },
+  "idTaller": 1,
+  "nombre": "Java 11",
+  "duracion": 26
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1723"
+  },
+  "idTaller": 2,
+  "nombre": "Java 16",
+  "duracion": 32.5
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1724"
+  },
+  "idTaller": 3,
+  "nombre": "Angualar 12",
+  "duracion": 15
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1725"
+  },
+  "idTaller": 4,
+  "nombre": "Spring Web Flux",
+  "duracion": 40
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1726"
+  },
+  "idTaller": 5,
+  "nombre": "Java 17",
+  "duracion": 15.25
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1727"
+  },
+  "idTaller": 6,
+  "nombre": "Angualar 13",
+  "duracion": 15
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1728"
+  },
+  "idTaller": 7,
+  "nombre": "React JS",
+  "duracion": 15
+},{
+  "_id": {
+    "$oid": "61462d631430862c54ed1729"
+  },
+  "idTaller": 8,
+  "nombre": "Vue.js",
+  "duracion": 15
+},{
+  "_id": {
+    "$oid": "61462df21430862c54ed172a"
+  },
+  "idTaller": 9,
+  "nombre": "Vainilla JS",
+  "duracion": 20
+},{
+  "_id": {
+    "$oid": "61463799cb7eba6886511872"
+  },
+  "idTaller": 10,
+  "nombre": "Vainilla JS Advanced",
+  "duracion": 15
+}]

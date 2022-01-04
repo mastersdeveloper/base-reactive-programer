@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "fcc7ab1b-4787-40f0-b9cb-77de638b4b5a",
+		"name": "FSR-01 v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "demo",
+			"item": [
+				{
+					"name": "findAllRoute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/talleres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"talleres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByLikeNombreRoute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/talleres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"talleres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByIdRoute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/talleres/af95a88b-12c3-4f78-bdad-c020f6ee0983",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"talleres",
+								"af95a88b-12c3-4f78-bdad-c020f6ee0983"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/talleres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"talleres"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/talleres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"talleres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTaller\": 21,\r\n    \"nombre\": \"Cliente v1 JS 25.09.2021\",\r\n    \"duracion\": 20.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/talleres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"talleres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByIdTaller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/talleres/id-taller/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"talleres",
+								"id-taller",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTaller\": 21,\r\n    \"nombre\": \"Cliente v1 JS 25.09.2021 -update\",\r\n    \"duracion\": 20.0,\r\n    \"estado\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/talleres/615801c517efa12e709efc4c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"talleres",
+								"615801c517efa12e709efc4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "615801c517efa12e709efc4c",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/talleres/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"talleres",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "findByIdTaller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/talleres/id-taller/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"talleres",
+						"id-taller",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/talleres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"talleres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/talleres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"talleres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/talleres/61462d631430862c54ed1726",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"talleres",
+						"61462d631430862c54ed1726"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\": 1,\r\n    \"nombre\": \"Vainilla JS 25.09.2021\",\r\n    \"instructor\": {\r\n        \"codigo\":1,\r\n        \"nombres\": \"Cesar\",\r\n        \"apellidos\":\"Hijar Rosa\",\r\n        \"correo\":\"chijar@galaxy.edu.pe\",\r\n        \"telefono\": \"+(51) 950500478\"\r\n    },\r\n    \"estado\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/v1/talleres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"talleres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\": 5,\r\n    \"nombre\": \"Net 5 v2\",\r\n    \"duracion\":25,\r\n    \"instructor\": {\r\n        \"codigo\":3,\r\n        \"nombres\": \"Erick Joseph\",\r\n        \"apellidos\":\"Arostegui Agunza\",\r\n        \"correo\":\"earostegui@galaxy.edu.pe\",\r\n        \"telefono\": \"+(51) 95050 7877\",\r\n        \"especialidad\":{\r\n           \"codigo\": \"1\",\r\n            \"nombre\": \"Net Developer Advanced\"\r\n        }\r\n    },\r\n    \"temas\": [\r\n            {\r\n                \"codigo\": \"1\",\r\n                \"nombre\": \"Introducción genereal\",\r\n                \"descripcion\": \"Nuevas caracteristicas\"\r\n            },\r\n            {\r\n                \"codigo\": \"2\",\r\n                \"nombre\": \"Caso práctico\",\r\n                \"descripcion\": \"Caso pratico con Programacion Concurrente\"\r\n            }\r\n        ],\r\n    \"situacion\":{\r\n        \"codigo\": \"2\",\r\n        \"nombre\": \"Reprogramado\"\r\n    },\r\n    \"estado\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/v1/talleres/201efca9-d1a4-443e-982c-60b5691ce6ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"talleres",
+						"201efca9-d1a4-443e-982c-60b5691ce6ba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"idTaller\": 11,\r\n        \"nombre\": \"Vainilla JS 25.09.2021 Update 2\",\r\n        \"duracion\": 25.25\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/talleres/614f3128361c644344ec4b9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"talleres",
+						"614f3128361c644344ec4b9e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
